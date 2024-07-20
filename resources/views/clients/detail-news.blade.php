@@ -103,7 +103,7 @@
                                         <div class="list-post fl-wrap">
                                             <a class="post-category-marker" href="category.html">{{$item->ten_danh_muc}}</a>
                                             <div class="list-post-media">
-                                                <a href="{{ url('/chi-tiet-tin', ['id' => $item->id]) }}">
+                                                <a href="{{ url('/chi-tiet-tin', ['id' => $item->id_tin]) }}">
                                                     <div class="bg-wrap">
                                                         <div class="bg" data-bg="{{asset($item->hinh_anh)}}"></div>
                                                     </div>
@@ -111,7 +111,7 @@
                                                 <span class="post-media_title">&copy; Image Copyrights Title</span>
                                             </div>
                                             <div class="list-post-content">
-                                                <h3><a href="{{ url('/chi-tiet-tin', ['id' => $item->id]) }}">{{$item->tieu_de}}</a></h3>
+                                                <h3><a href="{{ url('/chi-tiet-tin', ['id' => $item->id_tin]) }}">{{$item->tieu_de}}</a></h3>
                                                 <span class="post-date"><i class="far fa-clock"></i> 0{{$item->ngay_dang}}</span>
                                             </div>
                                         </div>

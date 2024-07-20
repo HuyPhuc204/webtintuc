@@ -137,12 +137,14 @@ class TinTucController extends Controller
         $tin = DB::table('tins')->where('id', $id)->first();
 
         $query = DB::table('tins as t')
+            ->select('t.*','t.id as id_tin', 'd.*')
             ->join('danh_muc_tins as d', 't.id_danh_muc', '=', 'd.id')
             ->where('id_danh_muc', $tin->id_danh_muc)
             ->where('t.id', '!=', $id)
             ->limit(4);
 
         $tinCungLoai = $query->get();
+        // dd($tinCungLoai);
         return $tinCungLoai;
     }
 
