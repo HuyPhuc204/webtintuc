@@ -26,8 +26,8 @@
                     <div class="col-md-8">
                         <div class="main-container fl-wrap fix-container-init">
                             <div class="section-title">
-                                <h2>Most Recent World News</h2>
-                                <h4>Don't miss daily news</h4>
+                                <h2>Tin theo danh mục</h2>
+                                <h4>Tin mới</h4>
                                 {{-- <div class="steader_opt steader_opt_abs">
                                     <select name="filter" id="list" data-placeholder="Persons"
                                         class="style-select no-search-select">

@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\User;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
 use PHPUnit\Framework\Constraint\Count;
@@ -96,8 +97,14 @@ class TinTucController extends Controller
         return $tinGanDay;
     }
 
+    public function showUser($id){
+        $user = User::find($id);
+        return $user;
+    }
+
     public function index()
     {
+        $id = session('id');
         $tinMoiNhat = $this->tinMoiNhat();
         $tinHot = $this->tinHot();
         $danhMuc = $this->listDanhMuc();
@@ -105,7 +112,8 @@ class TinTucController extends Controller
         $xemNhieuNhat = $this->xemNhieuNhat();
         $listXemNhieuNhat = $this->listXemNhieuNhat();
         $tinGanDay = $this->tinGanDay();
-        return view('clients.index', compact('tinHot', 'danhMuc', 'tinMoiNhat', 'tinNoiBat', 'xemNhieuNhat', 'listXemNhieuNhat', 'tinGanDay'));
+        $user = $this->showUser($id);
+        return view('clients.index', compact('tinHot', 'danhMuc', 'tinMoiNhat', 'tinNoiBat', 'xemNhieuNhat', 'listXemNhieuNhat', 'tinGanDay', 'user'));
     }
 
     public function chiTietTin($id)

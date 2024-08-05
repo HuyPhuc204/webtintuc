@@ -396,13 +396,13 @@
     </div>
     <!-- content  end-->
     <!-- cookie-info-bar -->
-    <div class="cookie-info-bar">
+    {{-- <div class="cookie-info-bar">
         <div class="container">
             <div class="cookie-info-bar_title"><i class="fal fa-cookie"></i>Trang web của chúng tôi sử dụng cookie.
                 Tìm hiểu thêm về việc sử dụng cookie của chúng tôi: <a href="#">Chính sách cookie</a></div>
             <a href="#" class="sicb_btn color-bg">Chấp nhận</a>
             <a href="#" class="sicb_btn">Hủy</a>
         </div>
-    </div>
+    </div> --}}
     <!-- cookie-info-bar end -->
 @endsection

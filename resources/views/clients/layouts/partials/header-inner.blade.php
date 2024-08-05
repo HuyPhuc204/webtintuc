@@ -5,8 +5,14 @@
         <!-- logo holder end -->
         <div class="search_btn htact show_search-btn"><i class="far fa-search"></i> <span class="header-tooltip">Tìm
                 kiếm</span></div>
-        <div class="srf_btn htact show-reg-form"><i class="fal fa-user"></i> <span class="header-tooltip">Đăng
-                nhập</span></div>
+        @if (session('login'))
+            <div class="srf_btn htact show-reg-form"><i class="fal fa-user"></i> <span class="header-tooltip">Tài
+                    khoản</span></div>
+        @else
+            <div class="srf_btn htact show-reg-form"><i class="fal fa-user"></i> <span class="header-tooltip">Đăng
+                    nhập</span></div>
+        @endif
+
         <!-- header-search-wrap -->
         <div class="header-search-wrap novis_sarch">
             <div class="widget-inner">
@@ -38,7 +44,9 @@
                         <!--second level -->
                         <ul>
                             @foreach ($danhMuc as $item)
-                                <li><a href="{{ url('/danh-muc', ['id_danh_muc' => $item->id]) }}">{{$item->ten_danh_muc}}</a></li>
+                                <li><a
+                                        href="{{ url('/danh-muc', ['id_danh_muc' => $item->id]) }}">{{ $item->ten_danh_muc }}</a>
+                                </li>
                             @endforeach
                         </ul>
                         <!--second level end-->
