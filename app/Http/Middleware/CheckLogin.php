@@ -4,6 +4,7 @@ namespace App\Http\Middleware;
 
 use Closure;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Session;
 use Symfony\Component\HttpFoundation\Response;
 
 class CheckLogin
@@ -19,6 +20,7 @@ class CheckLogin
             return $next($request);
         }
 
-        return redirect()->route('login');
+        Session::flash('message', 'Bạn cần đăng nhập để bình luận.');
+        return redirect()->back();
     }
 }

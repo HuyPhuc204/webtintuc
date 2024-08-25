@@ -177,7 +177,8 @@ class TinTucController extends Controller
         $demDanhMuc = $this->demDanhMuc();
         $tinCungLoai = $this->tinCungLoai($id);
         $binhLuan = $this->layDanhSachBinhLuan($id);
-        return view('clients.detail-news', compact('tinHot', 'danhMuc', 'chiTietTin', 'tinNoiBat', 'tinGanDay', 'demDanhMuc', 'tinCungLoai', 'binhLuan'));
+        $user = $this->showUser(session('id'));
+        return view('clients.detail-news', compact('tinHot', 'danhMuc', 'chiTietTin', 'tinNoiBat', 'tinGanDay', 'demDanhMuc', 'tinCungLoai', 'binhLuan', 'user'));
     }
 
     public function tinTheoLoai($idDanhMuc)
@@ -205,6 +206,7 @@ class TinTucController extends Controller
         $demDanhMuc = $this->demDanhMuc();
         // $tinCungLoai = $this->tinCungLoai($id);
         $tinTheoLoai = $this->tinTheoLoai($idDanhMuc);
-        return view('clients.list-news', compact('tinHot', 'danhMuc', 'tinNoiBat', 'tinGanDay', 'demDanhMuc', 'tinTheoLoai'));
+        $user = $this->showUser(session('id'));
+        return view('clients.list-news', compact('tinHot', 'danhMuc', 'tinNoiBat', 'tinGanDay', 'demDanhMuc', 'tinTheoLoai', 'user'));
     }
 }

@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\Http\Requests\RuleDangKy;
 use App\Http\Requests\RuleDangNhap;
+use App\Models\BinhLuan;
 use Illuminate\Support\Facades\Auth;
 use App\Models\User;
 use Illuminate\Support\Facades\Mail;
@@ -82,4 +83,16 @@ class AuthController extends Controller
         session()->flash('success', 'Lấy lại mật khẩu thành công, chúng tôi đã gửi mail đến bạn');
         return redirect()->back();
     }
+
+    public function binhLuan(Request $request, $id){
+        $request->validate(['loibinhluan' => 'required',]);
+
+        BinhLuan::create([
+            'id_tin' => $id,
+            'id_user' => $request->session()->get('id'),
+            'noi_dung' => $request->input('loibinhluan'),
+        ]);
+
+        return redirect()->back();
+     }
 }

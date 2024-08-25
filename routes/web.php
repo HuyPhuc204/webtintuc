@@ -28,6 +28,7 @@ Route::post('register', [AuthController::class, 'register'])->name('register');
 Route::post('logout', [AuthController::class, 'logout'])->name('logout');
 Route::get('forgotpass', [AuthController::class, 'forgotpass'])->name('forgotpass');
 Route::post('forgotpass', [AuthController::class, 'sendResetLinkEmail'])->name('password.reset');
+Route::post('comment/{id}',[AuthController::class, 'binhLuan'])->name('comment')->middleware(['login', IsUser::class]);
 
 Route::get('admin', [AdminController::class, 'index'])->name('admin')->middleware(['login', IsAdmin::class]);
 Route::get('list-cate', [AdminController::class, 'listCate'])->name('list-cate')->middleware(['login', IsAdmin::class]);

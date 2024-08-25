@@ -1,7 +1,7 @@
 <div class="header-inner fl-wrap">
     <div class="container">
         <!-- logo holder  -->
-        <a href="index-2.html" class="logo-holder"><img src="{{ asset('assets/images/logo.png') }}" alt=""></a>
+        <a href="{{ route('index') }}" class="logo-holder"><img src="{{ asset('assets/images/logo.png') }}" alt=""></a>
         <!-- logo holder end -->
         <div class="search_btn htact show_search-btn"><i class="far fa-search"></i> <span class="header-tooltip">Tìm
                 kiếm</span></div>
